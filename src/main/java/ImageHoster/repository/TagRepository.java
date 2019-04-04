@@ -23,7 +23,7 @@ public class TagRepository {
         }
         return tag;
     }
-
+    
     public Tag findTag(String tagName) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -33,4 +33,5 @@ public class TagRepository {
             return null;
         }
     }
+
 }

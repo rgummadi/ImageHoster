@@ -21,7 +21,31 @@ public class Tag {
     @Column
     private String name;
 
-    // Write the annotation for many to many between images and tags where they are mapped by tags field in the images table
+    public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
+	// Write the annotation for many to many between images and tags where they are mapped by tags field in the images table
     //The 'tags' table is mapped to 'images' table with Many:Many mapping
     //One image can have multiple categories/tags and there can be multiple images under one category/tag
     //FetchType is LAZY
@@ -37,27 +61,5 @@ public class Tag {
         this.name = tagName;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(List<Image> images) {
-        this.images = images;
-    }
+   //Generate getters and setters for all the attributes
 }
